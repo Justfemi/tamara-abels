@@ -11,12 +11,7 @@ import {
 const ModalComponent = ({ isOpen, onClose, img, title, children }) => {
   return (
     <>
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-        size="6xl"
-        isCentered
-      >
+      <Modal isOpen={isOpen} onClose={onClose} size="5xl" isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
@@ -26,7 +21,7 @@ const ModalComponent = ({ isOpen, onClose, img, title, children }) => {
                 <img src={img} alt="img" />
                 <h1>{title}</h1>
               </div>
-              <hr />              
+              <hr />
               {children}
             </ModalStyles>
           </ModalBody>
@@ -39,6 +34,7 @@ const ModalComponent = ({ isOpen, onClose, img, title, children }) => {
 export default ModalComponent;
 const ModalStyles = styled.div`
   width: 100%;
+  height: 100%;
   min-height: 300px;
   .head {
     display: flex;

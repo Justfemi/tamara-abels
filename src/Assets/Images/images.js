@@ -86,6 +86,8 @@ import space3 from "./space3.png";
 import space4 from "./space4.png";
 import navigator from "./navigator.svg";
 import translator from "./translator.svg";
+import loginbg from "./loginbg.png";
+import registerbg from "./registerbg.png";
 
 const Images = {
   navBg,
@@ -176,6 +178,8 @@ const Images = {
   space4,
   navigator,
   translator,
+  loginbg,
+  registerbg,
 };
 
 export default Images;
