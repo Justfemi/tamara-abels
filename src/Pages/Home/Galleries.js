@@ -489,7 +489,7 @@ const GalleryStyles = styled.div`
   .slide {
     position: absolute;
     bottom: -16%;
-    left: 20%;
+    left: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -583,12 +583,16 @@ const GalleryStyles = styled.div`
       flex-wrap: wrap;
 
       div {
-        width: 49%;
-        height: 250px;
+        width: 48%;
+        height: 420px;
         background: #ffffff;
         border-radius: 20px;
         cursor: pointer;
         overflow: hidden;
+
+        img {
+          width: 100%;
+        }
 
         &:hover {
           img {
