@@ -11,6 +11,7 @@ import GuiderProfile from "./Pages/GuiderProfile";
 import Home from "./Pages/Home/Home";
 import TravelerProfile from "./Pages/TravelerProfile";
 import GlobalStyles from "./Styles/GlobalStyle";
+import AddSpace from "./Pages/AddSpace/AddSpace";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route path="/guider-profile">
               <GuiderProfile />
+            </Route>
+            <Route path="/add-space">
+              <AddSpace />
             </Route>
             <Redirect to="/" />
           </Switch>

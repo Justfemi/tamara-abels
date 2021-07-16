@@ -376,11 +376,6 @@ const GalleryStyles = styled.div`
   &#sp {
     @media screen and (max-width: 1100px) {
       display: block;
-
-      .slide {
-        bottom: -5%;
-        left: 10%;
-      }
     }
   }
 
@@ -497,6 +492,10 @@ const GalleryStyles = styled.div`
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     padding: 1.2rem;
+    @media screen and (max-width: 1100px) {
+      bottom: -5%;
+      left: 10%;
+    }
 
     @media screen and (max-width: 800px) {
       position: static;

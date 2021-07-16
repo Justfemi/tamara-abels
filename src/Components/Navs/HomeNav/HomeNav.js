@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { useDisclosure } from "@chakra-ui/react";
 import Images from "../../../Assets/Images/images";
+import ModalComponent from "../../Modal/Modal";
+import Login from "../../Auth/Login";
 
 const HomeNav = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // configure with component the modal should display
+  const [activeContent, setActiveContent] = useState("login");
+  const renderLogin = () => {
+    setActiveContent("login");
+    onOpen();
+  };
+
+  const renderRegister = () => {
+    setActiveContent("register");
+    onOpen();
+  };
+
   return (
     <>
       <HomeNavStyles>
@@ -12,11 +29,23 @@ const HomeNav = () => {
             <img src={Images.icon} />
           </div>
           <div className="cta">
-            <button className="outline">sign up</button>
-            <button className="filled">login</button>
+            <button className="outline" onClick={renderRegister}>
+              sign up
+            </button>
+            <button className="filled" onClick={renderLogin}>
+              login
+            </button>
           </div>
         </div>
       </HomeNavStyles>
+      <ModalComponent
+        isOpen={isOpen}
+        onClose={onClose}
+        title="Join Us"
+        img={Images.icon}
+      >
+        {activeContent === "login" ? <Login /> : "register"}
+      </ModalComponent>
     </>
   );
 };
