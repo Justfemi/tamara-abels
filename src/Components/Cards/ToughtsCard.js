@@ -11,7 +11,7 @@ const ThoughtsCard = () => {
       <ThoughtsCardStyles>
         <div className="tops">
           <img src={Images.user} alt="User" />
-          <input type="text" placeholder="Share your thoughts" />
+          <input type="text" placeholder="Post your adventure" />
         </div>
         <div className="bottoms">
           <p>

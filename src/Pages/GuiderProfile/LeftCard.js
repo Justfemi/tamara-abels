@@ -5,6 +5,9 @@ import Experience from "../../Components/Cards/Experience";
 import FeatureCard from "../../Components/Cards/FeatureCard";
 import GridCard from "../../Components/Cards/GridCard";
 import Spaces from "../../Components/Cards/Spaces";
+import { IoAddCircleOutline } from "react-icons/io5";
+// import ModalNew from "../../Components/Modal/ModalNew";
+// import { IoAddCircleOutline } from "react-icons/io5";
 
 const LeftCard = () => {
   // import grid images
@@ -123,8 +126,8 @@ const LeftCard = () => {
           images={firstGridImages}
         />
         <FeatureCard cta noSub title="Skill/Knowledge Share Service" />
-        <Spaces heading="Stay Spaces" allData={spaces1} />
-        <Spaces heading="Business Spaces" allData={spaces2} />
+        <Spaces heading="Stay Spaces" allData={spaces1} button1="Add New" icon={<IoAddCircleOutline />}/>
+        <Spaces heading="Business Spaces" allData={spaces2} button2="Add New" icon={<IoAddCircleOutline />} />
       </LeftCardStyles>
     </>
   );

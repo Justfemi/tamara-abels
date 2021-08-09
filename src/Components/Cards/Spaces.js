@@ -1,20 +1,71 @@
-import React from "react";
+import React, {useState} from "react";
 import { AiFillDollarCircle } from "react-icons/ai";
-import { IoAddCircleOutline } from "react-icons/io5";
+// import { IoAddCircleOutline } from "react-icons/io5";
+// import { IoAddCircleOutline } from "react-icons/io5";
 import { BiBed, BiBath } from "react-icons/bi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import styled from "styled-components";
+// import Images from '../../Assets/Images/images';
+import ModalNew from "../Modal/ModalNew";
+import GlobalStyles from "../../Styles/GlobalStyle";
+// import Modal from 'react-modal';
 
-const Spaces = ({ heading, allData }) => {
+const Spaces = ({ heading, allData, button1, button2, icon, modal }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(prev => !prev);
+  }
   return (
     <>
       <SpacesStyles>
         <div className="name">
           <h5>{heading}</h5>
-          <button>
-            Add New <IoAddCircleOutline />
-          </button>
+          <div className="one">
+            <button>{button1}</button>
+            <i>{icon}</i>
+          </div>
+          <div className="two">
+            <button onClick={openModal}>{button2}</button>
+            <i>{icon}</i>
+          </div>
+          {/* <i><IoAddCircleOutline /></i> */}
+          {/* <div>{button1} <IoAddCircleOutline /></div>
+          <div onClick={openModal}>{button2} <IoAddCircleOutline /></div> */}
+          <GlobalStyles />
         </div>
+        {modal}
+        <ModalNew showModal={showModal} setShowModal={setShowModal}/>
+        {/* <div className="modal-bag">
+          <Modal isOpen={true} size="6x6">
+            <div className="modal-head">
+              <h1>Share</h1>
+              <AiOutlineCloseCircle/>
+              <hr />
+              <div className="modal-body">
+                <div className="first">
+                  <img src={Images.user} alt="User" />
+                  <select>
+                    <option>Post as Traveler/Guide</option>
+                    <option>Post as Traveler/Guide</option>
+                    <option>Post as Traveler/Guide</option>
+                    <option>Post as Traveler/Guide</option>
+                  </select>
+                </div>
+                <div className="second">
+                  <input placeholder="Type Here"/>
+                  <RiImageAddFill />
+                  <RiVideoFill />
+                  <button>POST</button>
+                </div>
+                <div className="third">
+                  <button>Add Location</button>
+                  <button>Make this an Event</button>
+                </div>
+              </div>
+            </div>
+          </Modal>
+        </div> */}
         {allData.length &&
           allData.map((data) => (
             <div className="box">
@@ -62,18 +113,29 @@ const SpacesStyles = styled.div`
   border-radius: 20px;
   width: 100%;
   height: auto;
+  // border: 5px solid red;
 
   .name {
-    button {
+    .one{
+      &last-of-type {
+        background: white;
+      }
+    }
+    div {
       padding: 0.4rem;
       background: rgba(76, 175, 80, 0.51);
       border-radius: 10px;
       display: flex;
       align-items: center;
+      cursor: pointer;
 
       svg {
         margin-left: 0.3rem;
       }
+    }
+
+    i {
+      display: none;
     }
   }
 
@@ -193,3 +255,5 @@ const SpacesStyles = styled.div`
     }
   }
 `;
+
+

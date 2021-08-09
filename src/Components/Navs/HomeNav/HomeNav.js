@@ -4,6 +4,7 @@ import { useDisclosure } from "@chakra-ui/react";
 import Images from "../../../Assets/Images/images";
 import ModalComponent from "../../Modal/Modal";
 import Login from "../../Auth/Login";
+import Register from "../../Auth/Register";
 
 const HomeNav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -44,7 +45,7 @@ const HomeNav = () => {
         title="Join Us"
         img={Images.icon}
       >
-        {activeContent === "login" ? <Login /> : "register"}
+        {activeContent === "login" ? <Login /> : <Register />}
       </ModalComponent>
     </>
   );

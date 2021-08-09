@@ -8,7 +8,7 @@ const AuthStyles = styled.div`
 
   .img-side {
     width: 49%;
-    height: 400px;
+    height: 450px;
     background: url(${({ bg }) => bg});
     background-size: cover;
     background-position: center;

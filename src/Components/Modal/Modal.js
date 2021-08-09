@@ -32,6 +32,7 @@ const ModalComponent = ({ isOpen, onClose, img, title, children }) => {
 };
 
 export default ModalComponent;
+
 const ModalStyles = styled.div`
   width: 100%;
   height: 100%;
@@ -61,5 +62,6 @@ const ModalStyles = styled.div`
     border: none;
     border-bottom: 5px solid #3f3d56;
     opacity: 1;
+    margin-bottom: 10px;
   }
 `;
